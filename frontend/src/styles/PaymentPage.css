@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.payment-page-container {
+  width: 100%;
+  padding: 80px 20px 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f8f8;
+}
+
+.payment-page {
+  width: 100%;
+  max-width: 400px; /* Increased max-width for better spacing */
+  display: flex;
+  flex-direction: column;
+  padding: 24px; /* Increased padding for better spacing */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Added for absolute positioning of close button */
+}
+
+.payment-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-close-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.payment-close-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.payment-page .brand-title {
+  font-size: 28px;
+  font-weight: 550;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  background: linear-gradient(45deg, #4a5aff, #ff5c5c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.payment-page h3 {
+  color: #444;
+  font-size: 18px; /* Slightly larger font size */
+  font-weight: 500;
+  margin-bottom: 10px; /* Increased margin for better spacing */
+}
+
+/* Order Summary Section */
+.payment-page .order-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px; /* Increased gap for better spacing */
+  background-color: #edf5ff;
+  padding: 16px; /* Increased padding for better spacing */
+  border-radius: 8px;
+  margin-bottom: 20px; /* Increased margin for better spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-page .order-summary p {
+  color: #444;
+  font-size: 16px; /* Slightly larger font size */
+  line-height: 1.5; /* Added line height for better readability */
+}
+
+/* Account Details Section */
+.payment-page .account-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background-color: #fefbea;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-page .account-details input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #000000 !important; /* Force black text color */
+  outline: none;
+  background-color: white !important;
+}
+
+.payment-page input {
+  background-color: white !important;
+  color: #333 !important;
+}
+
+.phone-input-container {
+  width: 100%;
+}
+
+.account-details .phone-input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: white !important;
+  color: #000000 !important;
+}
+
+.account-details .react-tel-input {
+  width: 100% !important;
+  height: 42px;
+  color: #333;
+}
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  padding-left: 50px !important;
+  height: 42px;
+  background-color: white !important;
+  color: #000000 !important;
+}
+
+.react-tel-input .flag-dropdown {
+  width: 48px !important;
+  background-color: white !important;
+}
+
+/* Payment Method Section */
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #f2fff6;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-section {
+  width: 100%;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px; /* Increased padding for better spacing */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px; /* Slightly larger font size */
+  background-color: #fff !important;
+  color: #000000 !important;
+}
+
+.payment-option:hover {
+  background-color: #e2fcea !important;
+}
+
+.upi-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.payment-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-button img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* UPI Options Section */
+.upi-options {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  border-radius: 0 0 8px 8px;
+  background-color: #fafafa;
+  margin-top: -6px;
+}
+
+.upi-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px; /* Increased padding for better spacing */
+  font-size: 15px;
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: white !important;
+  color: #000000 !important;
+}
+
+.upi-option:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.upi-option:hover {
+  background-color: #e2fcea !important;
+}
+
+.upi-option img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Card Details Section */
+.card-details {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  background-color: #fafafa;
+  margin-top: -6px;
+}
+
+.card-details label {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px; /* Increased margin for better spacing */
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Card Number Input with Icon */
+.card-number-input {
+  position: relative;
+  width: 100%;
+}
+
+.card-number-input input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* Add padding for the icon */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  background-color: white !important;
+  color: #000000 !important;
+}
+
+.card-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+}
+
+.default-card-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Card Expiry and CVV Section */
+.card-expiry-cvv {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.card-expiry-cvv div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-expiry-cvv input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  background-color: white !important;
+  color: #000000 !important;
+}
+
+.card-note {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Pay Now Button */
+.pay-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 24px; /* Increased margin for better spacing */
+  transition: background-color 0.3s ease;
+}
+
+.pay-button:hover {
+  background-color: #0056b3;
+}
+
+/* Radio button styles */
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background-color: white !important;
+}
+
+input[type="radio"]:checked {
+  background-color: #007bff !important;
+  border-color: #007bff;
+  position: relative;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Placeholder text color */
+input::placeholder {
+  color: #888 !important;
+  opacity: 1;
+}
+
+.payment-error-message {
+  font-size: 15px;
+  color: #f00;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .payment-page-container {
+    background-color: #fff;
+  }
+  .payment-page {
+    padding: 16px;
+    width: 100%;
+    box-shadow: none;
+  }
+}

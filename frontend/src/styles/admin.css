@@ -1,0 +1,62 @@
+/* src/styles/admin.css */
+.dashboard,
+.users,
+.courses,
+.transactions {
+  padding: 1rem;
+}
+
+.dashboard h1,
+.users h1,
+.courses h1,
+.transactions h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: center;
+}
+
+.stat-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+table tr:hover {
+  background-color: #f8f9fa;
+}

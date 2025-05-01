@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* General Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* AboutUs.css */
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 125px 20px 50px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+.about-us h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-us h2 {
+  font-size: 2rem;
+  color: #34495e;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.about-us h3 {
+  font-size: 1.75rem;
+  color: #2c3e50;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.about-us p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.about-us strong {
+  color: #2c3e50;
+}
+
+.about-us ol,
+.about-us ul {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.about-us li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.about-us ol {
+  list-style-type: decimal;
+}
+
+.about-us ul {
+  list-style-type: disc;
+}
+
+.about-us a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.about-us a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us {
+    padding: 125px 40px 50px;
+  }
+
+  .about-us h1 {
+    font-size: 2rem;
+  }
+
+  .about-us h2 {
+    font-size: 1.75rem;
+  }
+
+  .about-us h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-us p,
+  .about-us li {
+    font-size: 1rem;
+  }
+
+  .about-us ol,
+  .about-us ul {
+    margin-left: 20px;
+  }
+}

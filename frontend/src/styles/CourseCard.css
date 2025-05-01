@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* General Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.course-item {
+  width: 270px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.course-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.course-image-container img {
+  width: 100%; 
+  height: 150px; 
+  object-fit: cover;
+
+  border-radius: 8px 8px 0 0; 
+}
+
+.course-tag {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #ff5722;
+  color: #fff;
+  padding: 2px 16px;
+  border-radius: 0 0 0 8px;
+  font-size: 12px;
+  font-weight: semi-bold;
+}
+
+.course-info-container {
+  padding: 16px;
+  flex: 1;
+}
+
+.course-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.course-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.course-description {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.course-rating {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.rating-value {
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+.star-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.rating-count {
+  font-size: 14px;
+  color: #444;
+}
+
+.course-price {
+  margin-bottom: 12px;
+}
+
+.old-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+.new-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 8px;
+}
+
+.discount {
+  font-size: 14px;
+  color: #308d4f;
+  font-weight: 600;
+}
+
+.course-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.add-to-cart,
+.buy-now {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background-color: #FFD95F;
+  color: #000;
+}
+
+.add-to-cart:hover {
+  background-color: #edc43a;
+  color: #000;
+}
+
+.add-to-cart:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.buy-now {
+  background-color: #06f;
+  color: #fff;
+}
+

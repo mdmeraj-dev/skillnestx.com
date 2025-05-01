@@ -1,0 +1,142 @@
+/* Subscriptions Container */
+.profile-subscriptions-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Subscriptions Header */
+.profile-subscriptions-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 12px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+}
+
+.subscription-back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 100px;
+  transition: background-color 0.2s ease;
+}
+
+.subscription-back-button:hover {
+  background-color: #e9ecef;
+}
+
+.subscription-back-icon {
+  width: 20px;
+  height: 20px;
+  color: #495057;
+}
+
+.profile-subscriptions-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #212529;
+  flex: 1;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Subscriptions Content */
+.profile-subscriptions-content {
+  border-radius: 0 0 8px 8px;
+}
+
+.profile-subscription-card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+  margin: 0 auto;
+}
+
+/* Subscription Info */
+.profile-subscription-info {
+  margin-bottom: 16px;
+}
+
+.subscription-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.subscription-info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 450;
+  color: #495057;
+  font-size: 14px;
+}
+
+.info-value {
+  color: #212529;
+  font-size: 14px;
+}
+
+.status-active {
+  color: #2b8a3e;
+  font-weight: 500;
+}
+
+.status-inactive {
+  color: rgb(192, 20, 20);
+}
+
+/* Subscription Actions */
+.profile-subscription-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.subscription-renew-button,
+.subscription-cancel-button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.subscription-renew-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.subscription-renew-button:hover {
+  background-color: #2563eb;
+}
+
+.subscription-cancel-button {
+  background-color: #f8f9fa;
+  color: rgb(196, 18, 18);
+  border: 1px solid #dee2e6;
+}
+
+.subscription-cancel-button:hover {
+  border-color: #f00;
+}

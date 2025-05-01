@@ -1,0 +1,344 @@
+/* frontend/src/styles/AccountSettings.css */
+/* Importing Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Prevent background scrolling */
+body.login-modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Modal Overlay */
+.account-settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 123, 255, 0.3);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  padding: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Container */
+.account-settings-container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  width: 350px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  border: 1.5px solid #fff;
+  max-height: 95vh;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar */
+.account-settings-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.account-settings-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.account-settings-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+}
+
+/* Close Button */
+.account-settings-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  padding: 4px;
+}
+
+.account-settings-close-button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.account-settings-close-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.account-settings-close-button img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.account-settings-close-button:hover img {
+  opacity: 1;
+}
+
+/* Title */
+.account-settings-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 32px;
+}
+
+/* Form */
+.account-settings-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Group */
+.account-settings-form-group {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+/* Input Field */
+.account-settings-input-field {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 5px;
+  outline: none;
+  color: #333;
+  background: #fff;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.account-settings-input-field.account-settings-input-error {
+  border-color: #fc5454;
+  box-shadow: 0 0 0 2px rgba(252, 84, 84, 0.2);
+}
+
+.account-settings-input-field:focus {
+  border-color: #06f;
+  box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+}
+
+.account-settings-input-field:disabled {
+  background: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* Input Label */
+.account-settings-input-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  font-weight: 400;
+  left: 12px;
+  color: #333;
+  padding: 0 4px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+/* Floating Label Styles */
+.account-settings-input-field:focus ~ .account-settings-input-label,
+.account-settings-input-field.account-settings-input-field-has-content ~ .account-settings-input-label,
+.account-settings-input-label.account-settings-input-label-error {
+  top: 0;
+  font-size: 14px;
+  background-color: #fff;
+  padding: 0 4px;
+  transform: translateY(-50%) scale(0.9);
+}
+
+/* Focus State */
+.account-settings-input-field:focus ~ .account-settings-input-label {
+  color: #06f;
+}
+
+/* Has-Content State (Not Focused, No Error) */
+.account-settings-input-field.account-settings-input-field-has-content:not(:focus):not(.account-settings-input-error) ~ .account-settings-input-label {
+  color: #333;
+}
+
+/* Error Label Styles */
+.account-settings-input-label.account-settings-input-label-error {
+  color: #fc5454;
+}
+
+/* Error Message */
+.account-settings-error-message {
+  color: #fc5454;
+  font-size: 13px;
+  display: none;
+  line-height: 1.4;
+  margin: 8px 12px -24px;
+  text-align: left;
+}
+
+/* Show Error Message */
+.account-settings-input-error ~ .account-settings-error-message {
+  display: block;
+}
+
+/* Success Message */
+.account-settings-success-message {
+  margin: -16px 0 16px;
+  text-align: center;
+  color: #009544;
+  font-size: 16px;
+}
+
+/* Global Error */
+.account-settings-global-error
+ {
+  color: #fc5454;
+  font-size: 16px;
+  text-align: center;
+  margin: -16px 0 16px;
+}
+
+/* Form Actions */
+.account-settings-form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Edit Button */
+.account-settings-edit-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #8a3dff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.account-settings-edit-button:hover {
+  background-color: #670fc5;
+  box-shadow: 0 2px 8px rgba(0, 119, 255, 0.3);
+}
+
+.account-settings-edit-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Edit Actions */
+.account-settings-edit-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Cancel Button */
+.account-settings-cancel-button {
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+  font-weight: 400;
+}
+
+.account-settings-cancel-button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+/* Save Button */
+.account-settings-save-button {
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #00a348;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+  font-weight: 400;
+}
+
+.account-settings-save-button:hover:not(:disabled) {
+  background-color: #009d44;
+  box-shadow: 0 2px 8px rgba(0, 119, 255, 0.3);
+}
+
+.account-settings-save-button:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+/* Spinner Container */
+.account-settings-spinner-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Spinner */
+.account-settings-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Loading Text */
+.account-settings-button-loading {
+  font-size: 16px;
+}

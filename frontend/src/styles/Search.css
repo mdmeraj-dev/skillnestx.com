@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* ===================== */
+/* General Reset and Global Styles */
+/* ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ===================== */
+/* Search and Close Buttons */
+/* ===================== */
+.search-btn,
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover,
+.close-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Toggle between search and close button */
+.search-btn {
+  display: flex;
+}
+
+.search-btn.active {
+  display: none;
+}
+
+.close-btn {
+  display: none;
+}
+
+.close-btn.active {
+  display: flex;
+}
+
+/* ===================== */
+/* Search Bar Container */
+/* ===================== */
+.search-container {
+  position: fixed;
+  top: 70px; /* Positioned just below the navbar */
+  left: 0;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  z-index: 100;
+
+}
+
+/* Show search bar when active */
+.search-container.active {
+  display: flex;
+}
+
+/* ===================== */
+/* Search Bar */
+/* ===================== */
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  max-width: 600px;
+  position: relative;
+  border: 1.5px solid #ccc;
+  border-radius: 50px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  background-color: #fff;
+  z-index: 1001;
+  
+}
+
+/* ===================== */
+/* Input Field */
+/* ===================== */
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px 48px;
+  margin-left: 8px;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #555;
+  font-weight: 400;
+}
+
+.search-input:focus {
+  color: #000;
+}
+
+/* ===================== */
+/* Icons and Buttons */
+/* ===================== */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #444;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-icon {
+  left: 10px;
+  margin-right: 32px;
+  pointer-events: none;
+}
+
+.clear-btn {
+  right: 12px;
+  display: none;
+}
+
+.clear-btn.active {
+  display: flex;
+}
+
+.clear-btn:hover {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+/* ===================== */
+/* Responsive Design */
+/* ===================== */
+
+/* Mobile View (up to 768px) */
+@media (max-width: 468px) {
+  .search-container {
+    top: 60px; /* Adjusted for smaller navbar height */
+    padding: 12px 0;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+
+  .search-input {
+    padding: 12px 48px;
+    font-size: 14px;
+  }
+
+}
+@media (min-width: 469px) and (max-width: 768px) {
+  .search-container {
+    top: 64px; /* Adjusted for smaller navbar height */
+    padding: 14px 0;
+  }
+
+  .search-bar {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .search-input {
+    padding: 14px 48px;
+    font-size: 15px;
+  }
+
+}
+
+/* Tablet View (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .search-container {
+    top: 70px;
+    padding: 16px 0;
+  }
+
+  .search-bar {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .search-input {
+    padding: 16px 48px;
+    font-size: 16px;
+  }
+}
