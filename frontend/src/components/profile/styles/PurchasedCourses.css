@@ -1,0 +1,203 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* ============ Base Styles ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 2px;
+}
+
+/* ============ Modal Overlay ============ */
+.purchased-courses-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  padding: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============ Modal Container ============ */
+.purchased-courses-modal-container {
+  background: #233043;
+  padding: 40px 24px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ============ Close Button ============ */
+.purchased-courses-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 100px;
+  transition: background-color 0.2s ease;
+}
+
+.purchased-courses-close-button:hover {
+  background-color: #3b4a68;
+}
+
+.material-icons.purchased-courses-close-icon {
+  font-size: 20px;
+  color: #d1d5db;
+}
+
+/* ============ Header ============ */
+.purchased-courses-header {
+  text-align: center;
+}
+
+.purchased-courses-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* ============ Loading State ============ */
+.purchased-courses-loading {
+  font-size: 16px;
+  color: #d1d5db;
+  text-align: center;
+}
+
+/* ============ Error Message ============ */
+.purchased-courses-error-message {
+  color: #fff;
+  background-color: #3b4a68;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* ============ Empty State ============ */
+.purchased-courses-empty-message {
+  font-size: 16px;
+  color: #d1d5db;
+  text-align: center;
+  padding: 16px;
+}
+
+.purchased-courses-empty-message .explore-link {
+  color: #4ade80;
+  text-decoration: none;
+}
+
+.purchased-courses-empty-message .explore-link:hover {
+  text-decoration: underline;
+}
+
+/* ============ Courses Grid ============ */
+.purchased-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 24px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .purchased-courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============ Course Card ============ */
+.purchased-courses-card {
+  background: #31425e;
+  border-radius: 16px;
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid #2d3a55;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.purchased-courses-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============ Course Title ============ */
+.purchased-courses-card .purchased-course-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ============ Course Info (Purchased Date, Expiry Date, Duration) ============ */
+.purchased-courses-card .purchased-course-date {
+  font-size: 14px;
+  color: #d1d5db;
+  margin: 0;
+}
+
+/* ============ Continue Learning Button ============ */
+.purchased-courses-card .purchased-course-button {
+  padding: 10px;
+  background-color: #06b293;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.purchased-courses-card .purchased-course-button:hover {
+  background-color: #078b73;
+}
+

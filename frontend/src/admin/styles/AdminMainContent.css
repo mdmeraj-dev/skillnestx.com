@@ -1,0 +1,159 @@
+/* Main Content Styles */
+.admin-main-content {
+  background-color: #202b3d; /* Medium dark gray-blue background */
+  margin-top: 64px; /* Below navbar */
+  min-height: calc(100vh - 64px); /* Full height minus navbar */
+  padding: 24px;
+  box-sizing: border-box;
+  color: #ffffff; /* Primary text color */
+  z-index: 999; /* Below sidebar and navbar */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Sidebar open state (large screens) */
+.admin-main-content[data-sidebar-open="true"] {
+  margin-left: 250px;
+}
+
+/* Sidebar closed or mobile/tablet */
+.admin-main-content[data-sidebar-open="false"] {
+  margin-left: 0;
+}
+
+/* Content Container */
+.admin-main-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 80px; /* Space for footer */
+}
+
+/* Loading State */
+.admin-main-page-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #d1d5db; /* Secondary text color */
+  font-size: 18px;
+  font-weight: 500;
+  
+}
+
+/* Error Fallback */
+.admin-main-error-fallback {
+  background-color: #233043; /* Secondary background */
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.admin-main-error-fallback h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.admin-main-error-fallback p {
+  color: #d1d5db;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.admin-main-retry-button {
+  background-color: #3b4a68; /* Button background */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.admin-main-retry-button:hover {
+  background-color: #4c5e8a; /* Lighter hover state */
+}
+
+/* Not Found State */
+.admin-main-not-found {
+  background-color: #233043;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.admin-main-not-found h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.admin-main-not-found p {
+  color: #d1d5db;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.admin-main-not-found-link {
+  color: #3b4a68;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.admin-main-not-found-link:hover {
+  color: #4c5e8a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-main-content {
+    margin-left: 0; /* Full width on tablet/mobile */
+    padding: 16px;
+  }
+
+  .admin-main-content-container {
+    padding-bottom: 60px; /* Less space for footer on smaller screens */
+  }
+
+  .admin-main-error-fallback,
+  .admin-main-not-found {
+    margin: 20px auto;
+    padding: 16px;
+  }
+
+  .admin-main-error-fallback h2,
+  .admin-main-not-found h2 {
+    font-size: 20px;
+  }
+
+  .admin-main-error-fallback p,
+  .admin-main-not-found p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-main-content {
+    padding: 12px;
+  }
+
+  .admin-main-error-fallback,
+  .admin-main-not-found {
+    padding: 12px;
+  }
+
+  .admin-main-retry-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .admin-main-not-found-link {
+    font-size: 14px;
+  }
+}

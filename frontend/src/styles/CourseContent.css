@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* General Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.content-container {
+  background-color: #f8f8f8;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.course-content {
+  width: 100%;
+  max-width: 1000px;
+  padding: 120px 0px;
+}
+
+/* First Row: Panel Close Button and Course Info */
+.header-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.panel-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.panel-close-button img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+}
+
+.panel-close-button:hover {
+  background-color: #ddd;
+}
+
+.course-content .course-info {
+  margin: 0 auto;
+}
+
+.header-row .course-title {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #07f, #a31efc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 24px;
+}
+
+.syllabus-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333 !important;
+  margin-bottom: 1px;
+}
+
+/* Loading and Error Messages */
+.loading-message,
+.error-message {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 24px;
+}
+
+/* Syllabus Container */
+.syllabus-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 32px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.section-header h2 {
+  color: #222;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.section-header img {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 100px;
+  opacity: 0.9;
+}
+
+/* Chevron Down Icon Rotation */
+.section-header .toggle-icon {
+  transition: transform 0.3s ease-in-out; /* Smooth rotation */
+}
+
+.section-header .toggle-icon.open {
+  transform: rotate(180deg); /* Rotate 180 degrees when expanded */
+}
+
+.lesson-list {
+  padding: 0px 32px;
+  width: 100%; /* Ensure lesson list takes full width */
+  margin: 0 auto;
+}
+
+.lesson-list .lesson {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 16px 0;
+}
+
+.lesson-list .lesson:hover {
+  background-color: #ebf3fe;
+}
+
+.lesson-list .lesson-icon {
+  width: 20px; /* Adjusted for better visibility */
+  height: 20px;
+  flex-shrink: 0;
+  /* Prevents resizing when text overflows */
+}
+
+.lesson-list .lesson-title {
+  font-size: 18px;
+  flex: 1;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.lesson-list .lesson-content {
+  color: #444;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Enroll and Subscribe Buttons */
+.purchase-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.purchase-button-container .enroll-only-this,
+.purchase-button-container .get-full-access {
+  max-width: 150px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin: 0 auto;
+}
+
+.purchase-button-container .enroll-only-this {
+  background: #face40;
+  color: #333;
+}
+
+.purchase-button-container .enroll-only-this:hover {
+  background: #eabc05;
+}
+
+.purchase-button-container .get-full-access {
+  background: #06f;
+  color: #fff;
+}
+
+.purchase-button-container .get-full-access:hover {
+  background: #0056b3;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 480px) {
+  .content-container {
+    background-color: #fff;
+  }
+
+  .course-content {
+    padding: 100px 12px;
+  }
+
+  .header-row .course-title {
+    font-size: 24px;
+  }
+
+  .syllabus-title {
+    font-size: 22px;
+  }
+
+  .syllabus-container {
+    padding: 12px;
+  }
+
+  .section-header h2 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .lesson-list {
+    padding: 0;
+  }
+
+  .lesson-content .lesson-title {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+ 
+  .course-content {
+    padding: 100px 48px;
+  }
+
+  .header-row .course-title {
+    font-size: 26px;
+  }
+
+  .syllabus-title {
+    font-size: 22px;
+  }
+
+  .syllabus-container {
+    padding: 32px;
+  }
+
+  .section-header h2 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .lesson-list {
+    padding: 8px 16px;
+  }
+}

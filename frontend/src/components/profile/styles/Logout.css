@@ -1,0 +1,162 @@
+/* Logout Container */
+.logout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #233043;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 8px 8px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header with Back Button and Title */
+.logout-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px 12px;
+    position: relative;
+    border-bottom: 1px solid #2d3a55;
+}
+
+/* Back Button */
+.logout-back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #d1d5db;
+    background-color: #233043;
+    padding: 5px;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.material-icons.logout-back-icon {
+    font-size: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logout-back-button:hover {
+    background-color: #3b4a68;
+}
+
+.logout-back-button:hover .back-icon {
+    transform: translateX(-2px);
+}
+
+.logout-back-button:active .back-icon {
+    transform: translateX(0);
+}
+
+.logout-back-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.logout-content {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Logout Title */
+.logout-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 auto;
+}
+
+/* Logout Message */
+.logout-message {
+    font-size: 15px;
+    color: #d1d5db;
+    width: 100%;
+    text-align: center;
+}
+
+/* Logout Buttons Container */
+.logout-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Common Button Styles */
+.logout-confirm-button {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    outline: none;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Confirm Logout Button */
+.logout-confirm-button {
+    background-color: #3b4a68;
+    color: #ffffff;
+    box-shadow: 0 3px 6px rgba(59, 74, 104, 0.3);
+}
+
+.logout-confirm-button:hover {
+    background-color: #4c5e8a;
+}
+
+.logout-confirm-button:disabled {
+    background-color: #3b4a68;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.profile-logout-error {
+    color: #ff6b6b;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Loading Indicator */
+[aria-busy="true"] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Scopic Spinner */
+.logout-spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #ffffff;
+    border-top-color: #3b4a68;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Logout Icon */
+.material-icons.logout-icon {
+    font-size: 20px;
+}

@@ -1,0 +1,137 @@
+/* Subscriptions Container */
+.subscriptions-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #233043;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Subscriptions Header */
+.subscriptions-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 12px;
+  background-color: #202b3d;
+  border-bottom: 1px solid #2d3a55;
+  position: relative;
+}
+
+.back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 100px;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #3b4a68;
+}
+
+.material-icons.back-icon {
+  font-size: 20px;
+  color: #d1d5db;
+}
+
+.subscriptions-header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  flex: 1;
+  text-align: center;
+}
+
+/* Subscription Details */
+.subscription-details {
+  background-color: #202b3d;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2d3a55;
+  margin: 16px auto;
+  max-width: 600px;
+}
+
+.subscription-details h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.subscription-details p {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #3b4a68;
+  font-size: 14px;
+  margin: 0;
+}
+
+.subscription-details p:last-child {
+  border-bottom: none;
+}
+
+.subscription-details p span:first-child {
+  font-weight: 450;
+  color: #d1d5db;
+}
+
+.subscription-details p span:last-child {
+  color: #ffffff;
+}
+
+.subscription-details p span.status-active {
+  color: #4ade80;
+  font-weight: 500;
+}
+
+.subscription-details p span.status-inactive {
+  color: #ff6b6b;
+}
+
+/* No Subscription */
+.no-subscription {
+  background-color: #202b3d;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2d3a55;
+  margin: 16px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.no-subscription p {
+  font-size: 14px;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.no-subscription a {
+  color: #4ade80;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.no-subscription a:hover {
+  color: #6cff9f;
+}
+
+/* Error Message */
+.error-message {
+  font-size: 14px;
+  color: #ff6b6b;
+  text-align: center;
+  margin: 16px;
+}

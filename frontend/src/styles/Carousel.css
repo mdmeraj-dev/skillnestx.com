@@ -1,0 +1,191 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Featured Carousel Container */
+.featured-carousel {
+  width: 100%;
+  padding: 64px 24px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.featured-carousel .carousel-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* Swiper Container */
+.featured-carousel .swiper {
+  width: 100%;
+  padding: 16px;
+}
+
+/* Course Card */
+.featured-carousel .course-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.featured-carousel .course-card:hover {
+  transform: scale(1.05);
+}
+
+.featured-carousel .course-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.featured-carousel .course-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  padding: 16px 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Custom Pagination Dots */
+.featured-carousel .custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.featured-carousel .custom-pagination .swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.featured-carousel .custom-pagination .swiper-pagination-bullet-active {
+  background: #06f;
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+/* Skeleton Loader */
+.featured-carousel .swiper-skeleton {
+  display: flex;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+.featured-carousel .swiper-slide-skeleton {
+  flex: 1;
+  height: 200px;
+  background: #e0e0e0;
+  border-radius: 15px;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design for Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .featured-carousel {
+    padding: 32px 16px;
+  }
+
+  .featured-carousel .carousel-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .featured-carousel .course-card {
+    border-bottom: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: none;
+  }
+
+  .featured-carousel .course-image {
+    height: 140px;
+  }
+
+  .featured-carousel .course-title {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .featured-carousel .custom-pagination {
+    margin-top: 8px;
+  }
+}
+
+/* Responsive Design for Tablet Portrait (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .featured-carousel {
+    padding: 32px 16px;
+  }
+
+  .featured-carousel .carousel-title {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+
+  .featured-carousel .course-image {
+    height: 150px;
+  }
+
+  .featured-carousel .course-title {
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+/* Responsive Design for Tablet Landscape (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .featured-carousel {
+    padding: 48px 16px;
+  }
+
+  .featured-carousel .carousel-title {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+
+  .featured-carousel .course-image {
+    height: 160px;
+  }
+
+  .featured-carousel .course-title {
+    font-size: 1.2rem;
+    padding: 16px;
+  }
+
+  .featured-carousel .swiper {
+    padding: 24px;
+  }
+
+  .featured-carousel .custom-pagination {
+    margin-top: 16px;
+  }
+}

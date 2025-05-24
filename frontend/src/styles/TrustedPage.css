@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* General Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Trusted Section Wrapper */
+.trusted-section-wrapper {
+  padding: 48px 24px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Trusted Section Heading */
+.trusted-section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Trusted Organizations Container */
+.trusted-organizations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Trusted Companies and Universities Sections */
+.trusted-companies-section,
+.trusted-universities-section {
+  margin-top: 64px;
+}
+
+/* Trusted Companies and Universities Lists */
+.trusted-companies-list,
+.trusted-universities-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+/* Organization Logo Item */
+.organization-logo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Organization Logo Image */
+.organization-logo-image {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Organization Logo Name */
+.organization-logo-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .trusted-section-wrapper {
+    padding: 32px 20px;
+  }
+
+  .trusted-section-heading {
+    font-size: 1rem; /* Smaller heading for small devices */
+  }
+
+  .trusted-companies-section,
+  .trusted-universities-section {
+    margin-top: 24px;
+  }
+
+  .trusted-companies-list,
+  .trusted-universities-list {
+    gap: 28px; 
+  }
+
+  .organization-logo-item {
+    flex-direction: column; 
+    align-items: center;
+    gap: 8px; 
+  }
+
+  .organization-logo-image {
+    width: 20px; 
+    height: 20px;
+  }
+
+  .organization-logo-name {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .trusted-section-wrapper {
+    padding: 36px 24px;
+  }
+  .trusted-section-heading {
+    font-size: 1.25rem; /* Smaller heading for mobile */
+  }
+
+  .trusted-companies-section,
+  .trusted-universities-section {
+    margin-top: 24px;
+  }
+
+  .trusted-companies-list,
+  .trusted-universities-list {
+    gap: 32px; 
+  }
+
+  .organization-logo-item {
+    flex-direction: column; 
+    align-items: center;
+    gap: 8px; 
+  }
+
+  .organization-logo-image {
+    width: 24px; /* Smaller logo size */
+    height: 24px;
+  }
+
+  .organization-logo-name {
+    font-size: 0.8rem; /* Smaller font size for names */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .trusted-section-wrapper {
+    padding: 40px 20px;
+  }
+
+  .trusted-section-heading {
+    font-size: 1.5rem; /* Slightly smaller heading for tablets */
+  }
+
+  .trusted-companies-section,
+  .trusted-universities-section {
+    margin-top: 40px;
+  }
+
+  .trusted-companies-list,
+  .trusted-universities-list {
+    gap: 40px; /* Reduce gap between logos */
+  }
+
+  .organization-logo-image {
+    width: 28px; /* Slightly smaller logo size */
+    height: 28px;
+  }
+
+  .organization-logo-name {
+    font-size: 1rem; /* Smaller font size for names */
+  }
+}

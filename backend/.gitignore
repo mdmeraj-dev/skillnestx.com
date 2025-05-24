@@ -1,0 +1,170 @@
+# ================================================
+# Environment Files
+# ================================================
+# Ignore all environment files except .env.example
+.env
+.env.*
+!.env.example
+
+# ================================================
+# Dependency Directories
+# ================================================
+# Ignore dependency directories
+node_modules/
+bower_components/
+.pnp/
+.pnp.js
+
+# ================================================
+# Build and Output Directories
+# ================================================
+# Ignore build and output directories
+build/
+dist/
+out/
+.cache/
+.temp/
+.tmp/
+
+# ================================================
+# Logs and Debugging Files
+# ================================================
+# Ignore logs and debugging files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+debug.log
+lerna-debug.log*
+
+# ================================================
+# System Files (OS-Specific)
+# ================================================
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# ================================================
+# Database and Temporary Files
+# ================================================
+# Ignore database and temporary files
+*.sqlite
+*.sqlite-journal
+*.pid
+*.seed
+dump.rdb
+*.dump
+*.rdb
+*.bak
+*.backup
+
+# ================================================
+# Editor Configurations and Settings
+# ================================================
+# Ignore editor configurations and settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ================================================
+# Dependency Lockfiles (Optional)
+# ================================================
+# Ignore dependencies lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+shrinkwrap.json
+
+# ================================================
+# Testing and Coverage Files
+# ================================================
+# Ignore testing and coverage files
+coverage/
+.nyc_output/
+test-results/
+junit.xml
+
+# ================================================
+# TypeScript and JavaScript Cache
+# ================================================
+# Ignore TypeScript and JavaScript cache
+.tsbuildinfo
+*.tsbuildinfo
+.jest_cache/
+.eslintcache
+
+# ================================================
+# Local Development Files
+# ================================================
+# Ignore local development files
+.local-*
+*.local
+
+# ================================================
+# SSL and Certificate Files
+# ================================================
+# Ignore SSL and certificate files
+*.pem
+*.key
+*.cert
+*.crt
+*.csr
+*.pfx
+*.der
+
+# ================================================
+# Misc Files
+# ================================================
+# Ignore misc files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ================================================
+# IDE and Tool-Specific Files
+# ================================================
+# Ignore JetBrains IDE files
+.idea/
+*.iml
+
+# Ignore Visual Studio Code files
+.vscode/
+*.code-workspace
+
+# Ignore Sublime Text files
+*.sublime-workspace
+*.sublime-project
+
+# ================================================
+# Docker and Container Files
+# ================================================
+# Ignore Docker files
+docker-compose.override.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+
+# ================================================
+# CI/CD and Deployment Files
+# ================================================
+# Ignore CI/CD and deployment files
+.circleci/
+.github/
+.gitlab-ci.yml
+.travis.yml
+.azure-pipelines.yml
+
+# ================================================
+# Cache and Temporary Files
+# ================================================
+# Ignore cache and temporary files
+.cache/
+.temp/
+.tmp/

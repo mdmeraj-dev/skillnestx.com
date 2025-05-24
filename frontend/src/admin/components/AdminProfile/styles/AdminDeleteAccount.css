@@ -1,0 +1,427 @@
+/* Importing Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* ============ Base Styles ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 2px;
+}
+
+/* Prevent background scrolling */
+body.admin-delete-account-modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============ Container Styles ============ */
+.admin-delete-account-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #233043; /* Secondary navy background */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============ Header Styles ============ */
+.admin-delete-account-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 12px;
+  background-color: #202b3d; /* Dark header background */
+  border-bottom: 1px solid #2d3a55;
+  position: relative;
+}
+
+.admin-delete-account-title {
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ============ Back Button Styles ============ */
+.admin-delete-account-back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.admin-delete-account-back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-delete-account-back-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-delete-account-back-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  color: #d1d5db;
+  transition: transform 0.2s ease-in-out;
+}
+
+.admin-delete-account-back-icon:hover {
+  transform: translateX(-2px);
+}
+
+/* ============ Content Styles ============ */
+.admin-delete-account-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+/* ============ Warning Section ============ */
+.admin-delete-account-warning-section {
+  background-color: #3b4a68; /* Darker navy for warning */
+  border-left: 4px solid #ff6b6b;
+  padding: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.admin-delete-account-warning-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ff6b6b;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  text-align: left;
+}
+
+.admin-delete-account-warning-list {
+  list-style: none;
+  color: #d1d5db;
+  font-size: 14px;
+  text-align: left;
+}
+
+.admin-delete-account-warning-list li {
+  margin-bottom: 8px;
+}
+
+/* ============ Delete Button ============ */
+.admin-delete-account-button,
+.admin-delete-account-confirm-button {
+  padding: 10px;
+  background-color: #ff6b6b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-delete-account-button {
+  margin: 0 auto;
+  width: 180px;
+}
+
+.admin-delete-account-button:hover,
+.admin-delete-account-confirm-button:hover {
+  background-color: #ef4444;
+}
+
+.admin-delete-account-button:disabled,
+.admin-delete-account-confirm-button:disabled {
+  background-color: #f87171;
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: #ffffff;
+}
+
+.admin-delete-account-destructive {
+  background-color: #ff6b6b;
+}
+
+.admin-delete-account-destructive:hover {
+  background-color: #ef4444;
+}
+
+.admin-delete-account-destructive:disabled {
+  background-color: #f87171;
+}
+
+/* ============ Error Message ============ */
+.admin-delete-account-error-message {
+  color: #ff6b6b;
+  background-color: #2d3a55; /* Dark error background */
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ============ Modal Overlay ============ */
+.admin-delete-account-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200; /* Above AdminProfile dropdown */
+  padding: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============ Modal Styles ============ */
+.admin-delete-account-confirmation-modal,
+.admin-delete-account-success-modal {
+  background: #233043; /* Secondary navy background */
+  padding: 24px 16px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 95vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #d1d5db;
+}
+
+.admin-delete-account-confirmation-modal h2,
+.admin-delete-account-success-modal h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.admin-delete-account-confirmation-text {
+  font-size: 15px;
+  color: #d1d5db;
+  margin: 16px 0;
+}
+
+.admin-delete-account-success-text {
+  font-size: 16px;
+  color: #4ade80;
+  margin-top: 8px;
+}
+
+/* ============ Confirmation Buttons ============ */
+.admin-delete-account-confirmation-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-delete-account-confirm-button,
+.admin-delete-account-cancel-button {
+  flex: 1;
+}
+
+.admin-delete-account-cancel-button {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1.5px solid #2d3a55;
+  background-color: transparent;
+  color: #d1d5db;
+}
+
+.admin-delete-account-cancel-button:hover {
+  background-color: #3b4a68;
+  color: #ffffff;
+}
+
+.admin-delete-account-cancel-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============ Spinner Styles ============ */
+.admin-delete-account-spinner-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-delete-account-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid #3b4a68;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============ Responsive Design ============ */
+@media (max-width: 768px) {
+  .admin-delete-account-container {
+    max-width: 500px;
+  }
+
+  .admin-delete-account-content {
+    padding: 20px;
+  }
+
+  .admin-delete-account-header {
+    padding: 14px 10px;
+  }
+
+  .admin-delete-account-title {
+    font-size: 17px;
+  }
+
+  .admin-delete-account-warning-title {
+    font-size: 15px;
+  }
+
+  .admin-delete-account-warning-list li {
+    font-size: 13px;
+  }
+
+  .admin-delete-account-button {
+    width: 160px;
+  }
+
+  .admin-delete-account-confirmation-modal,
+  .admin-delete-account-success-modal {
+    max-width: 350px;
+    padding: 20px 14px;
+  }
+
+  .admin-delete-account-confirmation-modal h2,
+  .admin-delete-account-success-modal h2 {
+    font-size: 18px;
+  }
+
+  .admin-delete-account-confirmation-text {
+    font-size: 14px;
+  }
+
+  .admin-delete-account-success-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-delete-account-container {
+    max-width: 320px;
+  }
+
+  .admin-delete-account-content {
+    padding: 16px;
+  }
+
+  .admin-delete-account-header {
+    padding: 12px 8px;
+  }
+
+  .admin-delete-account-title {
+    font-size: 16px;
+  }
+
+  .admin-delete-account-warning-section {
+    padding: 6px;
+  }
+
+  .admin-delete-account-warning-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .admin-delete-account-warning-list li {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .admin-delete-account-error-message {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .admin-delete-account-button {
+    width: 140px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+
+
+  .admin-delete-account-confirmation-modal,
+  .admin-delete-account-success-modal {
+    max-width: 300px;
+    padding: 16px 12px;
+  }
+
+  .admin-delete-account-confirmation-modal h2,
+  .admin-delete-account-success-modal h2 {
+    font-size: 16px;
+  }
+
+  .admin-delete-account-confirmation-text {
+    font-size: 13px;
+    margin: 12px 0;
+  }
+
+  .admin-delete-account-success-text {
+    font-size: 14px;
+  }
+
+  .admin-delete-account-cancel-button,
+  .admin-delete-account-confirm-button {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+  }
+}

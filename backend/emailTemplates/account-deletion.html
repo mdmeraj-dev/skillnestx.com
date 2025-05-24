@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Deletion Confirmation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .email-header {
+        padding: 32px 0 16px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .header-content {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .company-logo {
+        height: 28px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      .company-name {
+        font-size: 28px;
+        font-weight: 600;
+        background: linear-gradient(45deg, #4a5aff, #ff5c5c);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .email-content {
+        padding: 8px 16px;
+        text-align: center;
+        color: #333;
+      }
+
+      .email-content h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      .email-content p {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+
+      .email-deletion-container {
+        width: auto;
+        background: #ebf3fe;
+        border-radius: 8px;
+        padding: 10px 12px;
+        text-align: center;
+        margin: 16px auto;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .email-deletion-container p {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .goodbye-message {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .email-note {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+
+      .email-footer {
+        padding: 16px 0 8px;
+        border-top: 1px solid #ddd;
+        font-size: 13px;
+        color: #444;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+
+      .email-footer span {
+        margin: 0 4px;
+      }
+
+      .email-footer p {
+        margin-bottom: 8px;
+      }
+
+      .email-footer a {
+        color: #06f;
+        text-decoration: none;
+      }
+
+      .email-footer a:hover {
+        text-decoration: underline;
+        color: #05f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <div class="header-content">
+          <img
+            src="https://skillnestx.com/assets/logos/company-logo.png"
+            alt="{{company_name}} Logo"
+            class="company-logo"
+          />
+          <span class="company-name">{{company_name}}</span>
+        </div>
+      </div>
+
+      <div class="email-content">
+        <h1 style="color: #333 !important;">Your Account Has Been Deleted</h1>
+
+        <p style="color: #333 !important;">Dear <strong>{{user_name}}</strong>,</p>
+
+        <div class="email-deletion-container">
+          <p style="color: #333 !important; font-size: 15px">
+            This email confirms that your {{company_name}} account has been
+            successfully deleted on <br> {{deletion_date}}.
+          </p>
+          <p class="goodbye-message" style="color: #333 !important;">We're sorry to see you go!</p>
+          <p style="color: #333 !important;">If you ever change your mind, you’re welcome to create a new account anytime.</p>
+        </div>
+
+        <p class="email-note" style="color: #333 !important;">
+          Have feedback or questions? Feel free to contact our support team at
+          <a href="mailto:{{support_email}}">{{support_email}}</a>.
+        </p>
+
+        <p style="color: #333 !important;">Thanks for being a part of {{company_name}}.</p>
+        <p style="color: #333 !important;">Best wishes,<br />The {{company_name}} Team </p>
+      </div>
+
+      <div class="email-footer">
+        <p style="color: #444 !important;">© {{current_year}} {{company_name}}. All rights reserved.</p>
+        <p style="color: #444 !important;">
+          <a href="https://skillnestx.com/privacy-policy" target="_blank"
+            >Privacy Policy</a
+          >
+          <span>|</span>
+          <a href="https://skillnestx.com/support" target="_blank"
+            >Help Center</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

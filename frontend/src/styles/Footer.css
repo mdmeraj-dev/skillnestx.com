@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Footer Container */
+.footer-container {
+  width: 100%;
+  background-color: #202020;
+  color: #ddd;
+  padding: 48px;
+}
+
+/* Footer Content */
+.footer-content {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-evenly;
+}
+
+/* Company Info Section */
+.footer-company-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+/* Form Header */
+.footer-company-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #1c7bdf, #8f11e3, #e62c2c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #bdc3c7;
+  line-height: 1.5;
+}
+
+/* Footer Sections */
+.footer-section {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.footer-section-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #ecf0f1;
+}
+
+/* Footer Links List */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link-item {
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-link:hover {
+  color: #07f;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 32px 64px;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-company-info {
+    margin: 0 auto;
+  }
+
+  .footer-company-name {
+    font-size: 1.5rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+
+  .footer-section-title {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+  }
+
+  .footer-links-list {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .footer-link-item {
+    text-align: left;
+    width: fit-content;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer-container {
+    padding: 36px 18px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .footer-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-company-name {
+    font-size: 1.25rem;
+  }
+
+  .footer-company-info {
+    max-width: 100%;
+  }
+
+  .footer-logo-container {
+    justify-content: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-section-title {
+    font-size: 1.25rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+  }
+}

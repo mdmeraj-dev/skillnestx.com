@@ -1,0 +1,82 @@
+.admin-transaction-management-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.admin-transaction-management-form h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #202b3d;
+}
+
+.admin-transaction-management-form-group {
+  margin-bottom: 15px;
+}
+
+.admin-transaction-management-form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #202b3d;
+}
+
+.admin-transaction-management-form-group input,
+.admin-transaction-management-form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.admin-transaction-management-form-group textarea {
+  resize: vertical;
+}
+
+.admin-transaction-management-error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.admin-transaction-management-success {
+  color: #28a745;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.admin-transaction-management-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.admin-transaction-management-action-button.save {
+  background: #28a745;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.transaction-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.5s linear infinite;
+  margin-right: 5px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,1042 @@
+/* CourseManagement.css - Enhanced styles for a modern admin course management dashboard */
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Container */
+.admin-course-management-container {
+  background: linear-gradient(180deg, #1a263f 0%, #111827 100%);
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 1400px;
+  margin: 32px auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Title */
+.admin-course-management-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.admin-course-management-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #10b981;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Metric Cards */
+.admin-course-management-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.admin-course-management-metric-card {
+  background: linear-gradient(135deg, #233043 0%, #2a3850 100%);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.admin-course-management-metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.admin-course-management-metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-course-management-metric-title {
+  font-size: 16px;
+  color: #d1d5db;
+  font-weight: 450;
+  opacity: 0.85;
+}
+
+.admin-course-management-metric-value {
+  font-size: 28px;
+  color: #10b981;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+
+.admin-course-management-metric-chart {
+  height: 150px;
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(31, 41, 55, 0.5);
+}
+
+.admin-course-management-dropdown {
+  width: 105px;
+  background: #1f2937;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23e5e7eb'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+}
+
+.admin-course-management-dropdown:hover {
+  border-color: #10b981;
+}
+
+.admin-course-management-dropdown:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  outline: none;
+}
+
+.admin-course-management-dropdown.pages-limit {
+  width: 120px;
+}
+
+/* Search Bar */ 
+
+.admin-course-management-search-section {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 32px auto;
+  position: relative;
+}
+
+.admin-course-management-search-input {
+  width: 100%;
+  padding: 12px 12px 12px 48px;
+  font-size: 16px;
+  color: #e5e7eb;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 50px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.admin-course-management-search-input:focus {
+  border-color: #3b4a68;
+  box-shadow: 0 0 0 2px rgba(59, 74, 104, 0.3);
+}
+
+.admin-course-management-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #9ca3af;
+  transition: color 0.2s ease;
+}
+
+/* Search Results */
+.admin-course-management-search-results {
+  margin: 20px 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.admin-course-management-search-results-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.admin-course-management-search-results-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #1f2937;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.admin-course-management-search-results-table th,
+.admin-course-management-search-results-table td {
+  padding: 14px;
+  text-align: left;
+  color: #e5e7eb;
+  border-bottom: 1px solid #374151;
+}
+
+.admin-course-management-search-results-table th {
+  background: #111827;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+}
+
+.admin-course-management-search-results-table td {
+  font-size: 14px;
+}
+
+.admin-course-management-search-results-table tr {
+  transition: background 0.3s ease;
+}
+
+.admin-course-management-search-results-table tr:hover {
+  background: #374151;
+}
+
+/* Action Buttons */
+.admin-course-management-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.admin-course-management-action-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+}
+
+.admin-course-management-action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.admin-course-management-action-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+.admin-course-management-action-button.add {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.admin-course-management-action-button.add:hover {
+  background: #059669;
+}
+
+.admin-course-management-action-button.save {
+  background: #8a3dff;
+  color: #ffffff;
+}
+
+.admin-course-management-action-button.save:hover {
+  background: #670fc5;
+}
+
+.admin-course-management-action-button.update {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.admin-course-management-action-button.update:hover {
+  background: #2563eb;
+}
+
+.admin-course-management-action-button.delete {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.admin-course-management-action-button.delete:hover {
+  background: #dc2626;
+}
+
+.admin-course-management-action-button.clear {
+  width: 75px;
+  padding: 8px;
+  background: #6b7280;
+  color: #ffffff;
+  margin-left: 8px;
+}
+
+.admin-course-management-action-button.clear:hover {
+  background: #4b5563;
+}
+
+.admin-course-management-action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-course-management-action-button.expand {
+  padding: 4px;
+  width: 35px;
+  height: 35px;
+  margin: 0 auto;
+}
+
+
+
+/* Spinner */
+.course-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px; /* Gap between spinner and text */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Table */
+.admin-course-management-course-list {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #233043;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.admin-course-management-course-list th,
+.admin-course-management-course-list td {
+  padding: 14px;
+  text-align: left;
+  color: #e5e7eb;
+  border-bottom: 1px solid #374151;
+}
+
+.admin-course-management-course-list th {
+  background: #202b3d;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+}
+
+.admin-course-management-course-list td {
+  font-size: 14px;
+}
+
+.admin-course-management-course-list tr {
+  transition: background 0.3s ease;
+}
+
+.admin-course-management-course-list tr:hover {
+  background: #374151;
+}
+
+/* Expandable Sections */
+.admin-course-management-expanded-row {
+  background: #111827;
+}
+
+.admin-course-management-expanded-content {
+  padding: 16px;
+  border-top: 1px solid #374151;
+}
+
+.admin-course-management-expanded-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.admin-course-management-section-item {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #1f2937;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.admin-course-management-section-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.admin-course-management-section-details span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.admin-course-management-section-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-course-management-lesson-list {
+  margin-left: 16px;
+  margin-top: 8px;
+}
+
+.admin-course-management-lesson-item {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #374151;
+  border-radius: 6px;
+}
+
+.admin-course-management-lesson-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-course-management-lesson-details span {
+  font-size: 13px;
+  color: #d1d5db;
+}
+
+.admin-course-management-lesson-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Modal */
+.admin-course-management-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.admin-course-management-modal-content {
+  background: #1f2937;
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.admin-course-management-modal-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #10b981;
+  border-radius: 12px 12px 0 0;
+}
+
+.admin-course-management-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.admin-course-management-modal-close:hover {
+  background: #4b5563;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.admin-course-management-modal-overlay {
+  margin-top: 32px;
+}
+
+/* Form Elements */
+.admin-course-management-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-course-management-form h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.admin-course-management-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-course-management-form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.admin-course-management-form-group input,
+.admin-course-management-form-group textarea,
+.admin-course-management-form-group select {
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 12px;
+  color: #e5e7eb;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.admin-course-management-form-group input:focus,
+.admin-course-management-form-group textarea:focus,
+.admin-course-management-form-group select:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  outline: none;
+}
+
+.admin-course-management-form-group.lesson-lock input {
+  margin-right: 5px;
+}
+
+.admin-course-management-form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.admin-course-management-form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-course-management-form-actions button {
+  flex: 0 0 150px;
+  margin-top: 8px;
+}
+
+/* Messages */
+.admin-course-management-error,
+.admin-course-management-success {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 6px;
+  text-align: center;
+  margin: 12px 0;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1010; /* Ensure messages appear above modal content */
+}
+
+.admin-course-management-error {
+  background: #7f1d1d;
+  color: #f87171;
+}
+
+.admin-course-management-success {
+  background: #064e3b;
+  color: #34d399;
+}
+
+/* Pagination */
+.admin-course-management-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.admin-course-management-pagination span {
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+/* Loading Skeleton */
+.admin-course-management-skeleton {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+  height: 48px;
+  margin-bottom: 12px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Empty State */
+.admin-course-management-empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 32px;
+  opacity: 0.9;
+  padding: 16px;
+  background: #1f2937;
+  border-radius: 8px;
+}
+
+.admin-course-management-question-actions-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 0;
+}
+
+/* CourseManagement.css */
+
+/* Modal overlay with blur effect */
+.admin-course-management-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Blur effect for background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+/* Delete confirmation modal */
+.admin-course-management-delete-modal {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+/* Delete modal actions */
+.admin-course-management-delete-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+/* Spinner for buttons */
+.course-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Button styles (ensure these match your existing button styles) */
+.admin-course-management-action-button.delete {
+  background-color: #e53e3e;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.admin-course-management-action-button.cancel {
+  background-color: #6b7280;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-course-management-action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Keyframes for spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modal heading */
+.admin-course-management-delete-modal h2 {
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Modal paragraph */
+.admin-course-management-delete-modal p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-course-management-container {
+    padding: 20px;
+    margin: 8px;
+  }
+
+  .admin-course-management-title {
+    font-size: 24px;
+  }
+
+  .admin-course-management-metrics {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    overflow-x: hidden;
+  }
+
+  .admin-course-management-metric-card {
+    padding: 16px;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .admin-course-management-metric-title {
+    font-size: 16px;
+  }
+
+  .admin-course-management-metric-value {
+    font-size: 15px;
+    font-weight: 550;
+  }
+
+  .admin-course-management-metric-subtotals h4 {
+    font-size: 14px;
+  }
+
+  .admin-course-management-metric-subtotals ul {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  }
+
+  .admin-course-management-metric-subtotals li {
+    font-size: 12px;
+  }
+
+  .admin-course-management-metric-chart {
+    height: 120px;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .admin-course-management-search-section {
+    max-width: 100%;
+  }
+
+  .admin-course-management-search-input {
+    font-size: 14px;
+    padding: 12px 12px 12px 40px;
+  }
+
+  .admin-course-management-search-icon {
+    width: 16px;
+    height: 16px;
+    left: 16px;
+  }
+
+  .admin-course-management-search-results-title {
+    font-size: 18px;
+  }
+
+  .admin-course-management-search-results-table th,
+  .admin-course-management-search-results-table td {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .admin-course-management-actions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .admin-course-management-action-button {
+    font-size: 13px;
+    padding: 8px 16px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .admin-course-management-action-button.expand {
+    padding: 0px;
+  }
+
+  .admin-course-management-action-button.clear {
+    width: 100px;
+    background-color: black;
+  }
+
+  .admin-course-management-course-list th,
+  .admin-course-management-course-list td {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .admin-course-management-modal-content {
+    height: 100vh;
+    padding: 24px;
+    width: 95%;
+  }
+
+  /* Expandable Sections */
+  .admin-course-management-expanded-row {
+    margin: 0;
+  }
+
+  .course-spinner {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-course-management-container {
+    padding: 8px;
+    margin: 0;
+  }
+
+  .admin-course-management-title {
+    font-size: 20px;
+  }
+
+  .admin-course-management-metrics {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    overflow-x: hidden;
+  }
+
+  .admin-course-management-metric-card {
+    padding: 12px;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .admin-course-management-metric-title {
+    font-size: 15px;
+  }
+
+  .admin-course-management-metric-value {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .admin-course-management-metric-subtotals h4 {
+    font-size: 12px;
+  }
+
+  .admin-course-management-metric-subtotals ul {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+
+  .admin-course-management-metric-subtotals li {
+    font-size: 11px;
+  }
+
+  .admin-course-management-metric-chart {
+    width: 100%;
+    max-width: 100%;
+    height: 120px;
+    padding: 8px;
+  }
+
+  .admin-course-management-metric-header {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .admin-course-management-dropdown {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .admin-course-management-pagination span {
+    display: none;
+  }
+
+  .admin-course-management-search-icon {
+    width: 14px;
+    height: 14px;
+    left: 16px;
+  }
+
+  .admin-course-management-search-results {
+    margin: 16px 0;
+  }
+
+  .admin-course-management-search-results-title {
+    font-size: 16px;
+  }
+
+  .admin-course-management-search-results-table,
+  .admin-course-management-course-list {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .admin-course-management-search-results-table thead,
+  .admin-course-management-course-list thead {
+    display: none;
+  }
+
+  .admin-course-management-search-results-table tbody,
+  .admin-course-management-search-results-table tr,
+  .admin-course-management-course-list tbody,
+  .admin-course-management-course-list tr {
+    display: block;
+  }
+
+  .admin-course-management-search-results-table tr,
+  .admin-course-management-course-list tr {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 16px;
+    background: #1f2937;
+    border-radius: 8px;
+  }
+
+  .admin-course-management-search-results-table tr:hover,
+  .admin-course-management-course-list tr:hover {
+    background: #374151;
+  }
+
+  .admin-course-management-search-results-table td,
+  .admin-course-management-course-list td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    font-size: 13px;
+    border-bottom: none;
+  }
+
+  .admin-course-management-search-results-table td:before,
+  .admin-course-management-course-list td:before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: #ffffff;
+    flex: 0 0 40%;
+  }
+
+  .admin-course-management-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-course-management-action-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+  }
+
+}

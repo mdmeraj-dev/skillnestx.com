@@ -1,0 +1,102 @@
+/* Admin Sidebar Styles */
+.admin-sidebar {
+  background-color: #121d2f; /* Primary dark navy background */
+  width: 250px;
+  position: fixed;
+  top: 64px; /* Below navbar */
+  bottom: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 900; /* Below navbar, above main content */
+  color: #ffffff; /* Primary text color */
+}
+
+.admin-sidebar-open {
+  transform: translateX(0);
+}
+
+.admin-sidebar-closed {
+  transform: translateX(-100%);
+  width: 0;
+}
+
+/* Sidebar Navigation */
+.admin-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Navigation Link */
+.admin-sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: #d1d5db; /* Secondary text color */
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-sidebar-nav-link:hover {
+  background-color: #253655; /* Hover state */
+  color: #ffffff;
+}
+
+.admin-sidebar-nav-link-active {
+  background-color: #1b2b45;    /* Secondary background for active link */
+  color: #ffffff;
+}
+
+/* Navigation Icon */
+.admin-sidebar-nav-icon {
+  font-size: 24px;
+  color: #d1d5db;
+}
+
+.admin-sidebar-nav-link-active .admin-sidebar-nav-icon {
+  color: #ffffff;
+}
+
+/* Navigation Label */
+.admin-sidebar-nav-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 250px; /* Slightly narrower on tablet */
+  }
+
+  .admin-sidebar-nav-link {
+    padding: 12px 16px;
+  }
+
+  .admin-sidebar-nav-label {
+    font-size: 14px;
+  }
+
+  .admin-sidebar-nav-icon {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-sidebar {
+    width: 250px; /* Narrower on mobile */
+    z-index: 1001;
+  }
+
+  .admin-sidebar-nav-link {
+    padding: 10px 16px;
+  }
+
+  .admin-sidebar-nav-label {
+    font-size: 14px;
+  }
+}

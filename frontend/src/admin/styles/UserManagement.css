@@ -1,0 +1,815 @@
+/* UserManagement.css - Professional styles for admin user management dashboard */
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.admin-user-management-container {
+  background: linear-gradient(180deg, #172233 0%, #1a263f 100%);
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 24px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.admin-user-management-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Metric Cards */
+.admin-user-management-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+.admin-user-management-metric-card {
+  background: linear-gradient(135deg, #233043 0%, #2a3850 100%);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.admin-user-management-metric-card:hover {
+  transform: translateY(-2px);
+}
+
+.admin-user-management-metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-user-management-metric-title {
+  font-size: 16px;
+  color: #d1d5db;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.admin-user-management-metric-value {
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.admin-user-management-metric-chart {
+  height: 100px;
+}
+
+.admin-user-management-dropdown {
+  background-color: #202b3d;
+  color: #d1d5db;
+  border: 1px solid #2d3a55;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.admin-user-management-dropdown:focus {
+  border-color: #3b4a68;
+  outline: none;
+}
+
+.admin-user-management-error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-user-management-error-container button {
+  padding: 6px 24px;
+}
+
+/* Search Bar */
+.admin-user-management-search-section {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  margin: 32px auto;
+  position: relative;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-user-management-search-input {
+  flex: 1;
+  padding: 12px 12px 12px 48px;
+  font-size: 15px;
+  color: #d1d5db;
+  background-color: #202b3d;
+  border: 1px solid #2d3a55;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.admin-user-management-search-input:focus {
+  border-color: #3b4a68;
+  box-shadow: 0 0 0 2px rgba(59, 74, 104, 0.3);
+}
+
+.admin-user-management-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #d1d5db;
+  opacity: 0.7;
+}
+
+/* User Details Card */
+.admin-user-management-user-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(59, 74, 104, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  backdrop-filter: blur(2px);
+}
+
+.admin-user-management-user-card {
+  background: linear-gradient(135deg, #233043 0%, #2a3850 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 450px;
+  padding: 24px;
+  position: relative;
+  color: #d1d5db;
+  margin-top: 50px;
+  height: 85vh;
+  overflow-y: auto;
+}
+
+.admin-user-management-user-card-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.admin-user-management-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #d1d5db;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.admin-user-management-user-card-close:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.admin-user-management-user-card-close:focus-visible {
+  outline: 2px solid #4c5e8a;
+  outline-offset: 2px;
+}
+
+.admin-user-management-user-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-user-management-user-card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #2d3a55;
+}
+
+.admin-user-management-user-card-label {
+  font-weight: 500;
+  color: #ffffff;
+  flex: 0 0 40%;
+  font-size: 14px;
+}
+
+.admin-user-management-user-card-item
+  span:not(.admin-user-management-user-card-label) {
+  flex: 0 0 60%;
+  font-size: 14px;
+  color: #d1d5db;
+  text-align: right;
+}
+
+.admin-user-management-user-card-loading {
+  text-align: center;
+  font-size: 16px;
+  color: #d1d5db;
+  margin: 20px 0;
+}
+
+/* Search Results Table */
+.admin-user-management-search-results {
+  margin: 16px 0;
+  max-width: 100%;
+  overflow-x: auto;
+  min-height: 60px; /* Ensure container is visible */
+}
+
+.admin-user-management-search-results-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.admin-user-management-search-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #233043;
+  border-radius: 8px;
+}
+
+.admin-user-management-search-results-table th,
+.admin-user-management-search-results-table td {
+  padding: 12px;
+  text-align: left;
+  color: #d1d5db;
+  border-bottom: 1px solid #2d3a55;
+}
+
+.admin-user-management-search-results-table th {
+  background-color: #202b3d;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: calc(100% / 5); /* Equal width for 5 columns */
+}
+
+.admin-user-management-search-results-table td {
+  font-size: 14px;
+}
+
+.admin-user-management-search-results-table tr {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.admin-user-management-search-results-table tr:hover {
+  background-color: #2a3850;
+}
+
+/* All Users Table */
+.admin-user-management-user-list {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #233043;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-user-management-user-list th,
+.admin-user-management-user-list td {
+  padding: 14px;
+  text-align: left;
+  color: #d1d5db;
+  border-bottom: 1px solid #2d3a55;
+}
+
+.admin-user-management-user-list th {
+  background-color: #202b3d;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: calc(100% / 5); /* Equal width for 5 columns */
+}
+
+.admin-user-management-user-list td {
+  font-size: 14px;
+}
+
+.admin-user-management-user-list tr {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.admin-user-management-user-list tr:hover {
+  background-color: #2a3850;
+}
+
+.admin-user-management-actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* Action Buttons */
+.admin-user-management-action-button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.admin-user-management-action-button:hover {
+  transform: translateY(-1px);
+}
+
+.admin-user-management-action-button:focus-visible {
+  outline: 2px solid #3b4a68;
+  outline-offset: 2px;
+}
+
+.admin-user-management-action-button.view {
+  background-color: #3b4a68;
+  color: #ffffff;
+}
+
+.admin-user-management-action-button.view:hover {
+  background-color: #4c5e8a;
+}
+
+.admin-user-management-action-button.clear {
+  background-color: #6b7280;
+  color: #ffffff;
+}
+
+.admin-user-management-action-button.clear:hover {
+  background-color: #9ca3af;
+}
+
+.admin-user-management-action-button.remove {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.admin-user-management-action-button.remove:hover {
+  background-color: #dc2626;
+}
+
+.admin-user-management-action-button.ban {
+  background-color: #f59e0b;
+  color: #ffffff;
+}
+
+.admin-user-management-action-button.ban:hover {
+  background-color: #d97706;
+}
+
+.admin-user-management-action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Messages */
+.admin-user-management-error,
+.admin-user-management-success {
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #2d3a55;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.admin-user-management-error {
+  color: #ff6b6b;
+}
+
+.admin-user-management-search-results .admin-user-management-error {
+  margin: 12px 0;
+  max-width: 100%;
+  padding: 8px;
+  background-color: #2d3a55;
+  border-radius: 6px;
+  box-sizing: border-box;
+  z-index: 1;
+  min-height: 20px;
+  visibility: visible;
+}
+
+.admin-user-management-success {
+  color: #22c55e;
+}
+
+/* Loading Skeleton */
+.admin-user-management-skeleton {
+  background: linear-gradient(90deg, #2d3a55 25%, #344055 50%, #2d3a55 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Empty State */
+.admin-user-management-empty {
+  text-align: center;
+  color: #d1d5db;
+  font-size: 16px;
+  margin-top: 24px;
+  opacity: 0.8;
+}
+
+/* Confirmation Dialog Styles */
+.admin-user-management-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.admin-user-management-confirmation-dialog {
+  background-color: #202b3d;
+  border-radius: 8px;
+  padding: 32px 24px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.admin-user-management-confirmation-message {
+  color: #d1d5db;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.admin-user-management-confirmation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.admin-user-management-action-button.confirm {
+  background-color: #e3342f;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.admin-user-management-action-button.confirm:hover {
+  background-color: #cc1f1a;
+}
+
+.admin-user-management-action-button.cancel {
+  background-color: #6b7280;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.admin-user-management-action-button.cancel:hover {
+  background-color: #4b5563;
+}
+
+.admin-user-management-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) and (max-width: 768px) {
+  .admin-user-management-container {
+    padding: 16px;
+    margin: 16px;
+  }
+
+  .admin-user-management-title {
+    font-size: 20px;
+  }
+
+  .admin-user-management-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-user-management-metric-card {
+    padding: 12px;
+  }
+
+  .admin-user-management-metric-value {
+    font-size: 24px;
+  }
+
+  .admin-user-management-metric-header {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .admin-user-management-dropdown {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .admin-user-management-search-section {
+    max-width: 100%;
+  }
+
+  .admin-user-management-search-input {
+    font-size: 14px;
+    padding: 10px 10px 10px 40px;
+  }
+  .admin-user-management-search-results-title {
+    font-size: 16px;
+  }
+
+  .admin-user-management-search-results-table th,
+  .admin-user-management-search-results-table td,
+  .admin-user-management-user-list th,
+  .admin-user-management-user-list td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .admin-user-management-action-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .admin-user-management-user-card {
+    width: 95%;
+    max-width: 400px;
+    padding: 20px;
+    height: auto;
+  }
+
+  .admin-user-management-user-card-title {
+    font-size: 20px;
+  }
+
+  .admin-user-management-user-card-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .admin-user-management-user-card-label {
+    flex: none;
+  }
+
+  .admin-user-management-user-card-item
+    span:not(.admin-user-management-user-card-label) {
+    flex: none;
+    text-align: left;
+  }
+
+  .admin-user-management-error,
+  .admin-user-management-success {
+    font-size: 13px;
+  }
+
+  .admin-user-management-search-results .admin-user-management-error {
+    margin: 8px 0;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .admin-user-management-container {
+    padding: 12px;
+  }
+
+  .admin-user-management-title {
+    font-size: 18px;
+  }
+
+  .admin-user-management-metric-card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .admin-user-management-metric-title {
+    font-size: 13px;
+  }
+
+  .admin-user-management-metric-value {
+    font-size: 24px;
+  }
+
+  .admin-user-management-metric-chart {
+    height: 70px;
+  }
+
+  .admin-user-management-metric-header {
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .admin-user-management-dropdown {
+    width: 100px;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .admin-user-management-search-section {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: hidden;
+    gap: 8px;
+  }
+
+  .admin-user-management-search-input {
+    font-size: 13px;
+    padding: 12px 12px 12px 40px;
+  }
+
+  .admin-user-management-search-input:focus-visible {
+    outline: none;
+    outline-offset: none;
+  }
+
+  .admin-user-management-search-icon {
+    width: 16px;
+    height: 16px;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .admin-user-management-search-results {
+    margin: 12px 0;
+  }
+
+  .admin-user-management-search-results-title {
+    font-size: 14px;
+  }
+
+  .admin-user-management-search-results-table,
+  .admin-user-management-user-list {
+    display: block;
+  }
+
+  .admin-user-management-search-results-table thead,
+  .admin-user-management-user-list thead {
+    display: none;
+  }
+
+  .admin-user-management-search-results-table tbody,
+  .admin-user-management-search-results-table tr,
+  .admin-user-management-user-list tbody,
+  .admin-user-management-user-list tr {
+    display: block;
+  }
+
+  .admin-user-management-search-results-table tr,
+  .admin-user-management-user-list tr {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #2d3a55;
+    padding-bottom: 12px;
+    background-color: #233043;
+  }
+
+  .admin-user-management-search-results-table tr:hover,
+  .admin-user-management-user-list tr:hover {
+    background-color: #2a3850;
+  }
+
+  .admin-user-management-search-results-table td,
+  .admin-user-management-user-list td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-bottom: none;
+  }
+
+  .admin-user-management-search-results-table td:before,
+  .admin-user-management-user-list td:before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: #ffffff;
+    flex: 0 0 50%;
+  }
+
+  .admin-user-management-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-user-management-action-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .admin-user-management-action-button.clear {
+    width: 75px;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .admin-user-management-user-card {
+    width: 95%;
+    max-width: 320px;
+    padding: 16px;
+    height: auto;
+  }
+
+  .admin-user-management-user-card-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .admin-user-management-user-card-item {
+    padding: 6px 0;
+  }
+
+  .admin-user-management-user-card-label,
+  .admin-user-management-user-card-item
+    span:not(.admin-user-management-user-card-label) {
+    font-size: 13px;
+  }
+
+  .admin-user-management-user-card-loading {
+    font-size: 14px;
+    margin: 16px 0;
+  }
+
+  .admin-user-management-error,
+  .admin-user-management-success {
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  .admin-user-management-search-results .admin-user-management-error {
+    margin: 8px 0;
+    padding: 6px;
+  }
+}

@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* General Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.course-payment-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 16px 32px;
+  background-color: #f5f5f5;
+}
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 350px;
+  padding: 16px 24px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.brand-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+}
+
+.order-summary,
+.account-details,
+.payment-method {
+  width: 100%;
+}
+
+.order-summary h3,
+.account-details h3,
+.payment-method h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #333;
+  font-size: 15px;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-details input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.account-details input[type="email"]:focus {
+  border-color: #80f;
+}
+
+/* Phone Input Section */
+.phone-input-section {
+  width: 100%;
+}
+
+.phone-input-container {
+  width: 100%;
+}
+
+.phone-input-sectin .phone-input {
+  width: 100%;
+  font-size: 18px;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.phone-input-section .phone-input:focus {
+  border-color: #80f;
+}
+
+/* Payment Methods */
+.payment-option-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+  background: #f0f0ff;
+  border-color: #80f;
+}
+
+.payment-option input {
+  cursor: pointer;
+}
+
+.payment-logo {
+  width: 48px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+/* Payment Button */
+.pay-btn {
+  width: 100%;
+  background: #80f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.pay-btn:hover {
+  background: #60f;
+}
+
+.pay-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Payment Status Messages */
+.payment-status {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.payment-status.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.payment-status.failed {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+/* Loading State */
+.pay-btn.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.pay-btn.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

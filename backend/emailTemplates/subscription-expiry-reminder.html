@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Expiry Reminder</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .email-header {
+        padding: 32px 0 16px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .header-content {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .company-logo {
+        height: 28px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      .company-name {
+        font-size: 28px;
+        font-weight: 600;
+        background: linear-gradient(45deg, #4a5aff, #ff5c5c);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .email-content {
+        padding: 8px 16px;
+        text-align: center;
+        color: #333;
+      }
+
+      .email-content h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      .email-content p {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+
+      .reminder-container {
+        width: auto;
+        background: #ebf3fe;
+        border-radius: 8px;
+        padding: 10px 12px;
+        text-align: center;
+        margin: 16px auto;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .reminder-container p {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .expiry-date {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff;
+        margin: 10px 0;
+      }
+
+      .action-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #007bff;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .cta-container {
+        text-align: center;
+        margin: 16px auto;
+      }
+
+      .support-note {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+
+      .email-footer {
+        padding: 16px 0 8px;
+        border-top: 1px solid #ddd;
+        font-size: 13px;
+        color: #444;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+
+      .email-footer span {
+        margin: 0 4px;
+      }
+
+      .email-footer p {
+        margin-bottom: 8px;
+      }
+
+      .email-footer a {
+        color: #06f;
+        text-decoration: none;
+      }
+
+      .email-footer a:hover {
+        text-decoration: underline;
+        color: #05f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <div class="header-content">
+          <img
+            src="https://skillnestx.com/assets/logos/company-logo.png"
+            alt="{{company_name}} Logo"
+            class="company-logo"
+          />
+          <span class="company-name">{{company_name}}</span>
+        </div>
+      </div>
+
+      <div class="email-content">
+        <h1 style="color: #333 !important;">Your Subscription is Expiring Soon</h1>
+
+        <p style="color: #333 !important;">Hello <strong>{{user_name}}</strong>,</p>
+
+        <div class="reminder-container">
+          <p style="color: #333 !important;">
+            Don’t miss out! Your {{company_name}} {{item_name}} subscription will expire on:
+          </p>
+          <div class="expiry-date" style="color: #007bff !important;">{{expiration_date}}</div>
+          <p style="color: #333 !important;">
+            Renew today to keep exploring our amazing courses without interruption!
+          </p>
+        </div>
+
+        <div class="cta-container">
+          <a href="https://skillnestx.com/subscriptions" class="action-button" style="color: #ffffff !important;"
+            >Renew Subscription</a
+          >
+        </div>
+
+        <p class="support-note" style="color: #333 !important;">
+          If you have any questions or need assistance, please contact us at
+          <a href="mailto:{{support_email}}" style="color: #06f !important;">{{support_email}}</a>.
+        </p>
+
+        <p style="color: #333 !important;">Best regards,<br />The {{company_name}} Team</p>
+      </div>
+
+      <div class="email-footer">
+        <p style="color: #444 !important;">© {{current_year}} {{company_name}}. All rights reserved.</p>
+        <p style="color: #444 !important;">
+          <a href="https://skillnestx.com/privacy-policy" target="_blank" style="color: #06f !important;"
+            >Privacy Policy</a
+          >
+          <span>|</span>
+          <a href="https://skillnestx.com/support" target="_blank" style="color: #06f !important;"
+            >Help Center</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

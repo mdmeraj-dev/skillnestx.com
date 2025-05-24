@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* General Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Main Container */
+.refund-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  /* Heading Styles */
+  .refund-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .refund-container h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 25px;
+    padding-bottom: 5px;
+  }
+  
+  /* Last Updated Text */
+  .last-updated {
+    font-size: 0.9rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Paragraph Styles */
+  .refund-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin: 10px 0;
+  }
+  
+  /* List Styles */
+  .refund-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+  }
+  
+  /* Email Link */
+  .refund-container a {
+    color: #06f;
+    text-decoration: none;
+  }
+  
+  .refund-container a:hover {
+    text-decoration: underline;
+  }
+
+  
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .refund-container {
+    width: 100%;
+  }
+  .refund-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .refund-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .refund-container p,
+  .refund-container ul li {
+    font-size: 0.95rem;
+  }
+}
+
+  

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Confirmation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .email-header {
+        padding: 32px 0 16px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .header-content {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .company-logo {
+        height: 28px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      .company-name {
+        font-size: 28px;
+        font-weight: 600;
+        background: linear-gradient(45deg, #4a5aff, #ff5c5c);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .email-content {
+        padding: 8px 16px;
+        text-align: center;
+        color: #333;
+      }
+
+      .email-content h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      .email-content p {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+
+      .subscription-container {
+        width: auto;
+        background: #ebf3fe;
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin: 16px auto;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .subscription-container h3 {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .subscription-detail {
+        margin: 8px 0;
+        font-size: 15px;
+        text-align: left;
+      }
+
+      .detail-label {
+        font-weight: 500;
+        color: #333;
+        display: inline-block;
+        width: 140px;
+      }
+
+      .detail-value {
+        font-weight: 400;
+        color: #007bff;
+        display: inline-block;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(45deg, #007bff, #864aff);
+        color: white;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .cta-container {
+        text-align: center;
+        margin: 16px auto;
+      }
+
+      .support-note {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+
+      .email-footer {
+        padding: 16px 0 8px;
+        border-top: 1px solid #ddd;
+        font-size: 13px;
+        color: #444;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+
+      .email-footer span {
+        margin: 0 4px;
+      }
+
+      .email-footer p {
+        margin-bottom: 8px;
+      }
+
+      .email-footer a {
+        color: #06f;
+        text-decoration: none;
+      }
+
+      .email-footer a:hover {
+        text-decoration: underline;
+        color: #05f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <div class="header-content">
+          <img
+            src="https://skillnestx.com/assets/logos/company-logo.png"
+            alt="{{company_name}} Logo"
+            class="company-logo"
+          />
+          <span class="company-name">{{company_name}}</span>
+        </div>
+      </div>
+
+      <div class="email-content">
+        <h1 style="color: #333 !important;">Subscription Confirmation</h1>
+
+        <p style="color: #333 !important;">Dear <strong>{{user_name}}</strong>,</p>
+
+        <p style="color: #333 !important;">
+          Thanks for subscribing to {{company_name}}! Your subscription is now active, and you can dive in to explore all our amazing courses!
+        </p>
+
+        <div class="subscription-container">
+          <h3 style="color: #333 !important;">Subscription Details:</h3>
+          <div class="subscription-detail">
+            <span class="detail-label" style="color: #333 !important;">Plan:</span>
+            <span class="detail-value" style="color: #007bff !important;">{{purchase_item}}</span>
+          </div>
+          <div class="subscription-detail">
+            <span class="detail-label" style="color: #333 !important;">Amount:</span>
+            <span class="detail-value" style="color: #007bff !important;">{{amount}}</span>
+          </div>
+          <div class="subscription-detail">
+            <span class="detail-label" style="color: #333 !important;">Transaction ID:</span>
+            <span class="detail-value" style="color: #007bff !important;">{{transaction_id}}</span>
+          </div>
+          <div class="subscription-detail">
+            <span class="detail-label" style="color: #333 !important;">Purchase Date:</span>
+            <span class="detail-value" style="color: #007bff !important;">{{purchase_date}}</span>
+          </div>
+          <div class="subscription-detail">
+            <span class="detail-label" style="color: #333 !important;">Duration:</span>
+            <span class="detail-value" style="color: #007bff !important;">{{duration}}</span>
+          </div>
+        </div>
+
+        <div class="cta-container">
+          <a href="https://skillnestx.com/courses" class="cta-button" style="color: #ffffff !important;"
+            >Start Learning</a
+          >
+        </div>
+
+        <p class="support-note" style="color: #333 !important;">
+          If you have any questions about your subscription, please contact us at
+          <a href="mailto:support@skillnestx.com" style="color: #06f !important;">support@skillnestx.com</a>.
+        </p>
+
+        <p style="color: #333 !important;">Happy learning!<br />The {{company_name}} Team</p>
+      </div>
+
+      <div class="email-footer">
+        <p style="color: #444 !important;">© {{current_year}} {{company_name}}. All rights reserved.</p>
+        <p style="color: #444 !important;">
+          <a href="https://skillnestx.com/privacy-policy" target="_blank" style="color: #06f !important;"
+            >Privacy Policy</a
+          >
+          <span>|</span>
+          <a href="https://skillnestx.com/support" target="_blank" style="color: #06f !important;"
+            >Help Center</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Your Email Address - {{company_name}}</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .email-header {
+        padding: 32px 0 16px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .header-content {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .company-logo {
+        height: 28px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      .company-name {
+        font-size: 28px;
+        font-weight: 600;
+        color: #4a5aff;
+        background: linear-gradient(45deg, #4a5aff, #ff5c5c);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .email-content {
+        padding: 8px 16px;
+        text-align: center;
+        color: #333;
+      }
+
+      .email-content h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      .email-content p {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+
+      .otp-container {
+        width: 80%;
+        background: #ebf3fe;
+        border-radius: 8px;
+        padding: 10px 12px;
+        text-align: center;
+        margin: 16px auto;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .otp-container p {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .otp-code {
+        font-size: 24px;
+        letter-spacing: 4px;
+        color: #007bff;
+        font-weight: bold;
+        margin: 10px 0;
+        font-family: monospace;
+      }
+
+      .email-note {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+      }
+
+      .email-footer {
+        padding: 16px 0 8px;
+        border-top: 1px solid #ddd;
+        font-size: 13px;
+        color: #444;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+
+      .email-footer span {
+        margin: 0 4px;
+      }
+
+      .email-footer p {
+        margin-bottom: 8px;
+      }
+
+      .email-footer a {
+        color: #06f;
+        text-decoration: none;
+      }
+
+      .email-footer a:hover {
+        text-decoration: underline;
+        color: #05f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <div class="header-content">
+          <img
+            src="https://skillnestx.com/assets/logos/company-logo.png"
+            alt="{{company_name}} Logo"
+            class="company-logo"
+          />
+          <span class="company-name">{{company_name}}</span>
+        </div>
+      </div>
+
+      <div class="email-content">
+        <h1 style="color: #333 !important;">Verify Your Email Address</h1>
+
+        <p style="color: #333 !important;">Dear <strong>{{user_name}}</strong>,</p>
+
+        <p style="color: #333 !important;">
+          Thank you for signing up with {{company_name}}! To complete your
+          registration, please verify your email address using the one-time
+          password below.
+        </p>
+
+        <div class="otp-container">
+          <p style="color: #333 !important;">Your one-time password (OTP):</p>
+          <div class="otp-code" style="color: #007bff !important;">{{otp}}</div>
+          <p style="color: #333 !important;">This code will expire in <strong>{{otp_expiry}}</strong></p>
+        </div>
+
+        <p class="email-note" style="color: #333 !important;">
+          For security reasons, please don’t share this code with anyone.
+        </p>
+
+        <p style="color: #333 !important;">
+          If you didn’t request this email, you can ignore it or contact us at
+          <a href="mailto:{{support_email}}" style="color: #06f !important;">{{support_email}}</a>.
+        </p>
+
+        <p style="color: #333 !important;">Best regards,<br /><span style="color: #333 !important;">The {{company_name}} Team</span></p>
+      </div>
+
+      <div class="email-footer">
+        <p style="color: #444 !important;">© {{current_year}} {{company_name}}. All rights reserved.</p>
+        <p style="color: #444 !important;">
+          <a href="https://skillnestx.com/privacy-policy" target="_blank" style="color: #06f !important;"
+            >Privacy Policy</a
+          >
+          <span>|</span>
+          <a href="https://skillnestx.com/support" target="_blank" style="color: #06f !important;"
+            >Help Center</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* ============ Base Styles ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 2px;
+}
+
+/* ============ Container Styles ============ */
+.delete-account-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #233043;
+}
+
+/* ============ Header Styles ============ */
+.delete-account-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 12px;
+  background-color: #202b3d;
+  border-bottom: 1px solid #2d3a55;
+  position: relative;
+}
+
+.delete-account-title {
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ============ Back Button Styles ============ */
+.delete-account-back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.material-icons.delete-account-back-button:hover {
+  background-color: #3b4a68;
+}
+
+.delete-account-back-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.material-icons.delete-account-back-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #d1d5db;
+}
+
+/* ============ Content Styles ============ */
+.delete-account-content {
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* ============ Warning Section ============ */
+.delete-account-warning-section {
+  background-color: #3b4a68;
+  border-left: 4px solid #ff6b6b;
+  padding: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.delete-account-warning-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff6b6b;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  text-align: left;
+}
+
+.delete-account-warning-list {
+  text-align: left;
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.delete-account-warning-list li {
+  background-color: #202b3d;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 0 0 8px 16px;
+}
+
+/* ============ Delete Button ============ */
+.delete-account-button,
+.delete-account-confirm-button {
+  padding: 8px;
+  background-color: #ff6b6b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-account-button {
+  margin: 0 auto;
+}
+
+.delete-account-button:hover,
+.delete-account-confirm-button:hover {
+  background-color: #e53e3e;
+}
+
+.delete-account-button:disabled,
+.delete-account-confirm-button:disabled {
+  background-color: #f87171;
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: #ffffff;
+}
+
+.destructive-action {
+  background-color: #ff6b6b;
+}
+
+.destructive-action:hover {
+  background-color: #e53e3e;
+}
+
+.destructive-action:disabled {
+  background-color: #f87171;
+}
+
+/* ============ Error Message ============ */
+.delete-account-error-message {
+  color: #ff6b6b;
+  background-color: #3b4a68;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ============ Modal Overlay ============ */
+.delete-account-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  padding: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============ Modal Styles ============ */
+.delete-account-confirmation-modal,
+.delete-account-success-modal {
+  background: #233043;
+  padding: 32px 16px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.delete-account-confirmation-modal h2,
+.delete-account-success-modal h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.delete-account-confirmation-text {
+  font-size: 15px;
+  color: #d1d5db;
+  margin: 16px 0;
+}
+
+.delete-account-success-text {
+  font-size: 16px;
+  color: #4ade80;
+  margin-top: 8px;
+}
+
+/* ============ Confirmation Buttons ============ */
+.delete-account-confirmation-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.delete-account-confirm-button, 
+.delete-account-cancel-button {
+  flex: 1;
+  max-width: 125px;
+}
+
+.delete-account-cancel-button {
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  width: 100px;
+  background-color: transparent;
+  color: #d1d5db;
+  border: 1.5px solid #2d3a55;
+}
+
+.delete-account-cancel-button:hover {
+  background-color: #3b4a68;
+  color: #ffffff;
+}
+
+.delete-account-cancel-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============ Spinner Styles ============ */
+.delete-account-spinner-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delete-account-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid #3b4a68;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

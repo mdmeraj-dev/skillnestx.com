@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* General Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* CourseProgress.css */
+.course-progress-container {
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.progress-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #e0f7e0;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 128, 0, 0.2);
+}
+
+.progress-percentage { 
+  font-size: 15px;
+  color: #555;
+  margin-top: 8px;
+  font-weight: 450;
+}
+
+.certificate-section {
+  margin-top: 24px;
+  padding: 16px 0 0;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #eaeaea;
+}
+
+.certificate-title {
+  font-size: 20px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.certificate-message {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.download-certificate-button {
+  padding: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-certificate-button:hover {
+  background-color: #003d7a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.download-certificate-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading state for certificate download */
+.certificate-loading {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.download-button-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Rate This Course Section */
+.rate-course-section {
+  padding: 24px 0;
+  margin-top: 24px;
+  background-color: #ebf3fe;
+  text-align: center;
+  border-radius:0 0 8px 8px;
+}
+
+/* New Rating Motivation Section */
+.rating-motivation {
+  padding: 16px;
+  background-color: #ffffff;
+  color: #555;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.rate-course-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.rate-course-subtitle {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.4;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.rate-course-star-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.star-rating button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 28px;
+  padding: 0 5px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.star-rating button:hover {
+  transform: scale(1.15);
+}
+
+.star-rating .on {
+  color: #ffc107;
+  text-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+.star-rating .off {
+  color: #c9c8c8;
+}
+
+.star-rating button:focus {
+  outline: none;
+}
+
+/* Enhanced Feedback Section Styles */
+.feedback-section {
+  margin-top: 16px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.feedback-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+}
+
+.feedback-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+
+.feedback-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 100px;
+  border: 1px solid #ddd;
+  color: #444;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  font-weight: 450;
+  min-width: 90px;
+  justify-content: center;
+}
+
+.feedback-button:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.feedback-button img {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.feedback-button:hover img {
+  transform: scale(1.1);
+}
+
+.like-button.active {
+  background-color: #e8f5e9;
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+.like-button.active:hover {
+  background-color: #dff0d8;
+}
+
+.dislike-button.active {
+  background-color: #ffebee;
+  border-color: #f44336;
+  color: #c62828;
+}
+
+.dislike-button.active:hover {
+  background-color: #fde0e0;
+}
+
+.feedback-thank-you {
+  font-size: 15px;
+  color: #555;
+  animation: fadeIn 0.3s ease;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.feedback-button.active {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .course-progress-container {
+    padding: 16px;
+  }
+  .progress-title {
+    font-size: 18px;
+  }
+
+  .certificate-title {
+    font-size: 17px;
+  }
+
+  .certificate-message {
+    font-size: 15px;
+  }
+
+  .rate-course-title {
+    font-size: 16px;
+  }
+
+  .rate-course-subtitle {
+    font-size: 14px;
+  }
+
+  .rate-course-star-title {
+    font-size: 18px;
+  }
+
+  .star-rating button {
+    font-size: 20px;
+  }
+
+  .feedback-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .feedback-buttons {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .feedback-button {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+

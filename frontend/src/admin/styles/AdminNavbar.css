@@ -1,0 +1,109 @@
+/* Admin Navbar Styles */
+.admin-navbar {
+  background-color: #131b28; /* Primary dark navy background */
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Ensure navbar stays above other elements */
+  color: #ffffff; /* Primary text color */
+}
+
+/* Menu Toggle Button */
+.admin-navbar-menu-icon {
+  background: none;
+  border: none;
+  background-color: #202b3d;
+  color: #d1d5db; /* Secondary text color */
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.admin-navbar-menu-icon:hover {
+  background-color: #3b4a68; /* Hover state */
+  border-radius: 4px;
+}
+
+.admin-navbar-menu-icon .material-icons {
+  font-size: 24px;
+}
+
+/* Brand Logo and Title */
+.admin-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-navbar-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.admin-navbar-title {
+
+  font-size: 28px;
+  font-weight: 550;
+  background: linear-gradient(45deg, #4a5aff, #ff5c5c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  margin: auto 0;
+}
+
+
+
+/* Admin Profile */
+.admin-navbar-profile {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-navbar-profile-placeholder {
+  color: #d1d5db; /* Secondary text color */
+  font-size: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-navbar {
+    padding: 0 12px;
+  }
+
+  .admin-navbar-logo {
+    height: 32px; /* Smaller logo on mobile */
+  }
+
+  .admin-navbar-title {
+    font-size: 18px;
+  }
+
+  .admin-navbar-menu-icon .material-icons {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-navbar {
+    padding: 0 8px;
+  }
+
+  .admin-navbar-title {
+    font-size: 28px;
+  }
+}
